@@ -1,0 +1,11 @@
+version: '3'
+services:
+  deno:
+    container_name: deno
+    build: .
+    ports:
+      - 1993:1993
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: bash -c "deno run --allow-net src/main.ts"
